@@ -114,6 +114,12 @@ namespace SmartHunter.Game.Data.ViewModels
                 ConfigHelper.Main.Save();
             })));
 
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts, "Show broken parts", "Show damanged monster parts", new Command(_ =>
+            {
+                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts;
+                ConfigHelper.Main.Save();
+            })));
+
             Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects, "Show unchanged status effects", "Automatically hide monsters status effects when there weren't any changes", new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects;
