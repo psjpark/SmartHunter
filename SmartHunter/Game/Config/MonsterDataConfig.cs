@@ -386,6 +386,24 @@ namespace SmartHunter.Game.Config
                 )
             },
             { // true
+                "em042_05",
+                new MonsterConfig("LOC_MONSTER_FROSTFANG_BARIOTH",
+                    new MonsterPartConfig[]
+                    {
+                        new MonsterPartConfig("Removable", "LOC_REMOVABLE_PART_TAIL", true),
+                        new MonsterPartConfig("Part", "LOC_PART_HEAD"),
+                        new MonsterPartConfig("Part", "LOC_PART_BODY"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARM_LEFT"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARM_RIGHT"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEG_LEFT"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEG_RIGHT"),
+                        new MonsterPartConfig("Part", "LOC_PART_TAIL")
+                    },
+                    2098.3f,
+                    new MonsterCrownConfig(CrownPreset.Standard)
+                )
+            },
+            { // true
                 "em043_00",
                 new MonsterConfig("LOC_MONSTER_DEVILJHO",
                     new MonsterPartConfig[]

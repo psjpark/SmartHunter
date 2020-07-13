@@ -16,6 +16,7 @@ namespace SmartHunter.Config
 
             // Iceborne monsters
 
+            { "LOC_MONSTER_FROSTFANG_BARIOTH", "Frostfang Barioth" },
             { "LOC_MONSTER_NARGACUGA", "Nargacuga" },
             { "LOC_MONSTER_NAMIELLE", "Namielle" },
             { "LOC_MONSTER_SHARA_ISHVALDA", "Shara Ishvalda" },
