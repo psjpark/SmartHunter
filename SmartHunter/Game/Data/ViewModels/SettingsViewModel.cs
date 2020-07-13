@@ -126,6 +126,12 @@ namespace SmartHunter.Game.Data.ViewModels
                 ConfigHelper.Main.Save();
             })));
 
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects, "Show status effects", "Show status effects", new Command(_ =>
+            {
+                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects;
+                ConfigHelper.Main.Save();
+            })));
+
             Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize, "Show monster size", "Show monster size hover its name", new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize;
