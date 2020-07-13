@@ -46,6 +46,7 @@ namespace SmartHunter.Game.Data.ViewModels
                 ConfigHelper.Main.Values.ShutdownWhenProcessExits = !ConfigHelper.Main.Values.ShutdownWhenProcessExits;
                 ConfigHelper.Main.Save();
             })));
+
             Settings.Add(new Setting(ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates, "Automatically check and download updates", "If enabled SmartHunter will automatically check and download new updates", new Command(_ =>
             {
                 ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates = !ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates;
