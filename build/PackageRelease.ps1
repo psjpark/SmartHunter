@@ -9,6 +9,7 @@ $fileList =
     "SmartHunter.exe",
     "Newtonsoft.Json.dll",
     "Default.xaml"
+    "ko-KR.json"
 
 $Error.Clear()
 
