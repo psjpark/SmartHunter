@@ -386,6 +386,24 @@ namespace SmartHunter.Game.Config
                 )
             },
             { // true
+                "em042_05",
+                new MonsterConfig("LOC_MONSTER_FROSTFANG_BARIOTH",
+                    new MonsterPartConfig[]
+                    {
+                        new MonsterPartConfig("Removable", "LOC_REMOVABLE_PART_TAIL", true),
+                        new MonsterPartConfig("Part", "LOC_PART_HEAD"),
+                        new MonsterPartConfig("Part", "LOC_PART_BODY"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARM_LEFT"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARM_RIGHT"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEG_LEFT"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEG_RIGHT"),
+                        new MonsterPartConfig("Part", "LOC_PART_TAIL")
+                    },
+                    2098.3f,
+                    new MonsterCrownConfig(CrownPreset.Standard)
+                )
+            },
+            { // true
                 "em043_00",
                 new MonsterConfig("LOC_MONSTER_DEVILJHO",
                     new MonsterPartConfig[]
@@ -463,6 +481,24 @@ namespace SmartHunter.Game.Config
                     },
                     2058.63f,
                     new MonsterCrownConfig(CrownPreset.Alternate)
+                )
+            },
+            {
+                "em050_00",
+                new MonsterConfig("LOC_MONSTER_ALATREON",
+                    new MonsterPartConfig[]
+                    {
+                        new MonsterPartConfig("Removable", "LOC_REMOVABLE_PART_TAIL", true),
+                        new MonsterPartConfig("Part", "LOC_PART_HEAD"),
+                        new MonsterPartConfig("Part", "LOC_PART_BODY"),
+                        new MonsterPartConfig("Part", "LOC_PART_WINGS"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARMS"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEGS"),
+                        new MonsterPartConfig("Part", "LOC_PART_TAIL")
+                    },
+                    2474.69f,
+                    new MonsterCrownConfig(CrownPreset.Standard),
+                    true
                 )
             },
             { // true
