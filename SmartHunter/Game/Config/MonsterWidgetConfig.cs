@@ -15,6 +15,7 @@ namespace SmartHunter.Game.Config
         public bool ShowBrokenParts = true;
         public float HidePartsAfterSeconds = 12f;
         public bool ShowUnchangedStatusEffects = false;
+        public bool ShowStatusEffects = true;
         public float HideStatusEffectsAfterSeconds = 12f;
 
         public bool ShowSize = false;

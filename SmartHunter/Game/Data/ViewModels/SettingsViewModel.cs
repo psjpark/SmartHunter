@@ -46,6 +46,7 @@ namespace SmartHunter.Game.Data.ViewModels
                 ConfigHelper.Main.Values.ShutdownWhenProcessExits = !ConfigHelper.Main.Values.ShutdownWhenProcessExits;
                 ConfigHelper.Main.Save();
             })));
+
             Settings.Add(new Setting(ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates, "Automatically check and download updates", "If enabled SmartHunter will automatically check and download new updates", new Command(_ =>
             {
                 ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates = !ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates;
@@ -123,6 +124,12 @@ namespace SmartHunter.Game.Data.ViewModels
             Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects, "Show unchanged status effects", "Automatically hide monsters status effects when there weren't any changes", new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects;
+                ConfigHelper.Main.Save();
+            })));
+
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects, "Show status effects", "Show status effects", new Command(_ =>
+            {
+                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects;
                 ConfigHelper.Main.Save();
             })));
 
