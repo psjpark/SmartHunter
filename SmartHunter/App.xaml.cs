@@ -42,7 +42,7 @@ namespace SmartHunter
             m_Overlay = new MhwOverlay(new ConsoleWindow(), new TeamWidgetWindow(), new MonsterWidgetWindow(), new PlayerWidgetWindow(), new DebugWidgetWindow());
 
             base.OnStartup(e);
-        }
+       }
 
         protected override void OnExit(ExitEventArgs e)
         {

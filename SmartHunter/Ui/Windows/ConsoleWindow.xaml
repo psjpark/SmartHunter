@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="SmartHunter"
         Height="500"
-        Width="1000"
+        Width="700"
         >
 
     <Window.Resources>
@@ -28,6 +28,11 @@
         <TabItem Header="Settings" x:Name="SettingsTab">
             <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True">
                 <ItemsControl Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Settings}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="2" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="{x:Type core:Setting}">
                             <Grid>
@@ -38,8 +43,8 @@
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Name}" ToolTip="{Binding Description}" HorizontalAlignment="Left" Margin="10 5 10 5"></TextBlock>
-                                <CheckBox Grid.Row="0" Grid.Column="1" Command="{Binding TriggerAction}" IsChecked="{Binding Value}" HorizontalAlignment="Right" Margin="5 10 10 5"></CheckBox>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Name}" ToolTip="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 10 5" FontWeight="{Binding Fontweight}" ></TextBlock>
+                                <CheckBox Grid.Row="0" Grid.Column="1" Command="{Binding TriggerAction}" IsChecked="{Binding Value}" Visibility="{Binding Checkbox_visibility}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 10 10 5"></CheckBox>
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
