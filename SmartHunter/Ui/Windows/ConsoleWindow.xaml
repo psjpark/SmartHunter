@@ -33,7 +33,7 @@
                             <UniformGrid Columns="2" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemTemplate>                        
                         <DataTemplate DataType="{x:Type core:Setting}">
                             <Grid>
                                 <Grid.RowDefinitions>
@@ -42,11 +42,11 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
+                                </Grid.ColumnDefinitions>                                
                                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Name}" ToolTip="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 10 5" FontWeight="{Binding Fontweight}" ></TextBlock>
-                                <CheckBox Grid.Row="0" Grid.Column="1" Command="{Binding TriggerAction}" IsChecked="{Binding Value}" Visibility="{Binding Checkbox_visibility}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 10 10 5"></CheckBox>
-                            </Grid>
-                        </DataTemplate>
+                                <CheckBox Grid.Row="0" Grid.Column="1" Command="{Binding TriggerAction}" IsChecked="{Binding Value}" Visibility="{Binding Checkbox_visibility}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 10 10 5"></CheckBox>                                
+                            </Grid>                            
+                        </DataTemplate>                        
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </ScrollViewer>
