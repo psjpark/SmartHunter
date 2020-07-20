@@ -9,7 +9,7 @@ namespace SmartHunter.Game.Config
         public string IncludeMonsterIdRegex = "em[0-9]";
         public string IncludePartGroupIdRegex = ".*";
         public string IncludeStatusEffectGroupIdRegex = ".*";
-        public bool ShowUnchangedMonsters = true;
+        public bool ShowUnchangedMonsters = true;        
         public float HideMonstersAfterSeconds = 999f;
         public bool ShowUnchangedParts = false;
         public bool ShowBrokenParts = true;

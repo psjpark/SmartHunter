@@ -6,6 +6,9 @@ using Newtonsoft.Json.Converters;
 using SmartHunter.Config;
 using SmartHunter.Game.Helpers;
 using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
+using SmartHunter.Ui.Windows;
+using System.Windows;
+using System.Windows.Data;
 
 namespace SmartHunter.Core.Config
 {
@@ -94,6 +97,8 @@ namespace SmartHunter.Core.Config
 
             Loaded?.Invoke(this, null);
         }
+               
+
 
         public void Save(bool printToLog = true)
         {
@@ -103,15 +108,16 @@ namespace SmartHunter.Core.Config
             {
                 File.WriteAllText(FullPathFileName, GetAutoGenerateedJson());
                 if (printToLog)
-                {
-                    Log.WriteLine($"{FileName} saved");
-                }
+                {                                      
+                    Log.WriteLine($"{FileName} saved");                    
+                }                
+                
             }
             catch (Exception ex)
             {
                 Log.WriteException(ex);
             }
-
+                                    
             TryUnpauseWatching();
         }
 

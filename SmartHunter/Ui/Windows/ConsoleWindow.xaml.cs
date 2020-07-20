@@ -10,9 +10,7 @@ namespace SmartHunter.Ui.Windows
             InitializeComponent();
 
             LogsTab.DataContext = ConsoleViewModel.Instance;
-            SettingsTab.DataContext = SettingsViewModel.Instance;
-
-            
+            SettingsTab.DataContext = SettingsViewModel.Instance;           
         }
     }
 }

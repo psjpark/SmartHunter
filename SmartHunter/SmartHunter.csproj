@@ -3,7 +3,6 @@
         <ProjectGuid>{F5F99CEF-1C16-48E6-A88B-1A66D3B53998}</ProjectGuid>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net461</TargetFramework>
-        <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Deterministic>false</Deterministic>
         <LangVersion>latest</LangVersion>
@@ -26,7 +25,16 @@
         <Exec Command="powershell.exe -ExecutionPolicy Unrestricted -File &quot;$(ProjectDir)..\build\PackageRelease.ps1&quot; $(Configuration)" />
     </Target>
     <ItemGroup>
+      <None Remove="Ui\Windows\mhw_logo_inverted.png" />
+    </ItemGroup>
+    <ItemGroup>
+      <Resource Include="Ui\Resources\mhw_logo_inverted.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+    <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+        <PackageReference Include="WPFToggleSwitch" Version="1.0.0" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="Microsoft.CSharp" />
@@ -39,9 +47,23 @@
         <Reference Include="WindowsBase" />
         <Reference Include="PresentationCore" />
         <Reference Include="PresentationFramework" />
+        <Reference Include="WindowsFormsIntegration" />
     </ItemGroup>
     <ItemGroup>
         <Resource Include="Ui\Fonts\Roboto-Bold.ttf" />
         <Resource Include="Ui\Fonts\Roboto-Medium.ttf" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="Properties\Settings.Designer.cs">
+        <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Settings.settings</DependentUpon>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="Properties\Settings.settings">
+        <Generator>SettingsSingleFileGenerator</Generator>
+        <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      </None>
     </ItemGroup>
 </Project>

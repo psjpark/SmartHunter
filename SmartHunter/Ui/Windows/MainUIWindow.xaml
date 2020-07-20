@@ -1,0 +1,104 @@
+<Window x:Class="SmartHunter.Ui.Windows.MainUIWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:SmartHunter.Game.Data.ViewModels"
+        d:DataContext="{x:Static viewModels:ConsoleViewModel.Instance}"
+        xmlns:core="clr-namespace:SmartHunter.Core"        
+        xmlns:ts="clr-namespace:WPFToggleSwitch;assembly=WPFToggleSwitch"        
+        mc:Ignorable="d"
+        Title="SmartHunter" Height="440" Width="660" WindowStartupLocation="CenterScreen" Background="Transparent" Foreground="White" FontFamily="Consolas" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown">
+    
+    <Window.Resources>           
+        <ResourceDictionary>
+            <Style TargetType="TextBox">
+                <Setter Property="FontFamily" Value="Consolas" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>    
+
+    <Grid>        
+        <!--Window control-->
+        <Grid VerticalAlignment="Top" Background="#FF252526">
+            <TextBlock Text=" SmartHunter by psjpark" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <StackPanel Height ="20" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button x:Name="btnMinimize" Width="20" Content ="_"  Background="#FF252526" BorderBrush="#FF252526" Foreground="White" Click="btnMinimize_Click" />
+                <Button x:Name="btnClose" Width="20" Content ="x" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" Click="btnClose_Click"/>
+            </StackPanel>
+        </Grid>
+        <!--Main Panel-->
+        <DockPanel x:Name="MainPanel" LastChildFill="False" Background="#FF252526" Margin="0,20,0,0">
+            <!--Side Panel-->
+            <DockPanel x:Name="SidePanel" DockPanel.Dock="Left" LastChildFill="False" Width="100" Background="#FF2D2D30">
+                <!--Side Menu-->                
+                <Grid>
+                    <DockPanel x:Name="LogoPanel" Height="80" Width="80" Background="#FF2D2D30" Margin="0,0,0,320">
+                        <Image x:Name="MHWLogo" Width="80" Source="/SmartHunter;component/Ui/Resources/mhw_logo_inverted.png" Stretch="Fill"/>
+                    </DockPanel>
+                    <Button x:Name="btnLog" Content="  Log" HorizontalContentAlignment="Left" Width="100" Height="25" Margin="0,100,0,0" VerticalAlignment="Top" BorderThickness="0" BorderBrush="White" Background="#FF2D2D30" FontFamily="Consolas" Foreground="White" Click="btnLog_Click"/>
+                    <Button x:Name="btnSettings" Content="  Settings" HorizontalContentAlignment="Left" Width="100" Height="25" Margin="0,125,0,0" VerticalAlignment="Top" d:LayoutOverrides="Height" BorderThickness="0" Background="#FF2D2D30" FontFamily="Consolas" Foreground="White" Click="btnSettings_Click" />
+                    <StackPanel x:Name ="SettingsSubpanel" Width="100" Height="76" Margin="0,-40,0,0">
+                        <Button x:Name="btnGeneral" Content="    General" HorizontalContentAlignment="Left" Width="100" Height="25" Margin="0,0,0,0" VerticalAlignment="Top" BorderThickness="0" BorderBrush="White" Background="#FF2D2D30" FontFamily="Consolas" Foreground="White" Click="btnGeneral_Click"/>
+                        <Button x:Name="btnMonster" Content="    Monster" HorizontalContentAlignment="Left" Width="100" Height="25" Margin="0,0,0,0" VerticalAlignment="Top" BorderThickness="0" BorderBrush="White" Background="#FF2D2D30" FontFamily="Consolas" Foreground="White" Click="btnMonster_Click"/>
+                        <Button x:Name="btnTeam" Content="    Team" HorizontalContentAlignment="Left" Width="100" Height="25" Margin="0,0,0,0" VerticalAlignment="Top" BorderThickness="0" BorderBrush="White" Background="#FF2D2D30" FontFamily="Consolas" Foreground="White" Click="btnTeam_Click"/>
+                    </StackPanel>
+                </Grid>
+            </DockPanel>
+            <!--Main Grid-->
+            <Grid x:Name="gridMain" Width="560" >
+                <!--Log Grid-->
+                <TextBox x:Name="tboxLog" Text="{Binding Output}" AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Visible" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" FontSize="11" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionBrush="#FF0058FF"/>
+                <!--Settings_General Grid-->
+                <ItemsControl x:Name="gridSettingsGeneral" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding SettingsGeneral}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type core:Setting}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Label}" ToolTip="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 10 5" FontWeight="{Binding Fontweight}" ></TextBlock>
+                                <ts:ToggleSwitch x:Name="toggleSwitchGeneralAll" Grid.Row="0" Grid.Column="1" Command ="{Binding TriggerAction}" IsChecked="{Binding Value}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 20 2" Foreground="White" UncheckedText="" CheckedText="" UncheckedBorderBrush="#FF333333" CheckedBorderBrush="#FF2D2D30"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <!--Settings_Monster Grid-->
+                <ItemsControl x:Name="gridSettingsMonster" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding SettingsMonster}">
+                    <ItemsControl.ItemTemplate>                        
+                        <DataTemplate DataType="{x:Type core:Setting}">
+                            <Grid x:Name="gridMonster">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Label}" IsEnabled="{Binding IsEnabled}" ToolTip="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 10 5" FontWeight="{Binding Fontweight}" ></TextBlock>
+                                <ts:ToggleSwitch x:Name="toggleSwitchMonsterAll" IsEnabled="{Binding enabled, Converter={StaticResource A_Converter_BoolToVisibility}}" Grid.Row="0" Grid.Column="1" Command ="{Binding TriggerAction}" IsChecked="{Binding Value}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 20 2" Foreground="White" UncheckedText="" CheckedText="" UncheckedBorderBrush="#FF333333" CheckedBorderBrush="#FF2D2D30"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <!--Settings_Team Grid-->
+                <ItemsControl x:Name="gridSettingsTeam" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding SettingsTeam}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type core:Setting}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Label}" IsEnabled="{Binding enabled,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 10 5" FontWeight="{Binding Fontweight}" ></TextBlock>
+                                <ts:ToggleSwitch x:Name="toggleSwitchTeamAll" IsEnabled="{Binding enabled,UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Command ="{Binding TriggerAction}" IsChecked="{Binding Value}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 20 2" Foreground="White" UncheckedText="" CheckedText="" UncheckedBorderBrush="#FF333333" CheckedBorderBrush="#FF2D2D30"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </DockPanel>
+    </Grid>
+
+</Window>

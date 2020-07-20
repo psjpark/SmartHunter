@@ -39,8 +39,8 @@ namespace SmartHunter
             m_SkinFile.Changed += (s1, e1) => { LoadSkin(); };
             LoadSkin();
 
-            m_Overlay = new MhwOverlay(new ConsoleWindow(), new TeamWidgetWindow(), new MonsterWidgetWindow(), new PlayerWidgetWindow(), new DebugWidgetWindow());  //opening point
-
+            m_Overlay = new MhwOverlay(new MainUIWindow(), new TeamWidgetWindow(), new MonsterWidgetWindow(), new PlayerWidgetWindow(), new DebugWidgetWindow());  //opening point
+            
             base.OnStartup(e);
        }
 
