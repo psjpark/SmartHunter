@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Windows.Data;
 
 namespace SmartHunter.Ui.Converters
 {
-    class AngleToIsLargeArcConverter : IValueConverter
+    public class AngleToIsLargeArcConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

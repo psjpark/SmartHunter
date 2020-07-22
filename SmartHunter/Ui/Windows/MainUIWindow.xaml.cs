@@ -6,25 +6,24 @@ using SmartHunter.Core.Data;
 using SmartHunter.Game.Data.ViewModels;
 using SmartHunter.Ui.Converters;
 using System.ComponentModel;
+using SmartHunter.Ui.Windows.Panels;
+using System.Windows.Controls;
 
 namespace SmartHunter.Ui.Windows
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    ///
-    public class BoolToStringConverter : BoolToValueConverter<String> { }
+    ///   
 
     public partial class MainUIWindow : Window
     {
         public MainUIWindow()
         {
-            InitializeComponent();
-            tboxLog.DataContext = ConsoleViewModel.Instance;
+            InitializeComponent();         
             gridMain.DataContext = SettingsViewModel.Instance;
-            hideAllGrid();
             hideAllSubpanel();
-            tboxLog.Visibility = Visibility.Visible;            
+            MainContent.Content = new LogPanel();
         }
 
         private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -45,14 +44,6 @@ namespace SmartHunter.Ui.Windows
             Close();            
         }
 
-        private void hideAllGrid()
-        {
-            tboxLog.Visibility = Visibility.Collapsed;  
-            gridSettingsGeneral.Visibility = Visibility.Collapsed;
-            gridSettingsTeam.Visibility = Visibility.Collapsed;
-            gridSettingsMonster.Visibility = Visibility.Collapsed;
-        }
-
         private void hideAllSubpanel()
         {
             SettingsSubpanel.Visibility = Visibility.Collapsed;            
@@ -60,35 +51,41 @@ namespace SmartHunter.Ui.Windows
 
         private void btnLog_Click(object sender, RoutedEventArgs e)
         {
-            hideAllGrid();
             hideAllSubpanel();
-            tboxLog.Visibility = Visibility.Visible;            
+            MainContent.Content = new LogPanel();
+            Highlight.Margin = new Thickness(-90, 100, 0, 0);
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            hideAllGrid();
-            hideAllSubpanel();                       
+            hideAllSubpanel();
             SettingsSubpanel.Visibility = Visibility.Visible;
-            gridSettingsGeneral.Visibility = Visibility.Visible;
+            MainContent.Content = new GeneralPanel();
+            Highlight.Margin = new Thickness(-90, 152, 0, 0);
         }
 
         private void btnGeneral_Click(object sender, RoutedEventArgs e)
         {
-            hideAllGrid();
-            gridSettingsGeneral.Visibility = Visibility.Visible;
+            hideAllSubpanel();
+            SettingsSubpanel.Visibility = Visibility.Visible;
+            MainContent.Content = new GeneralPanel();
+            Highlight.Margin = new Thickness(-90, 152, 0, 0);
         }
 
         private void btnMonster_Click(object sender, RoutedEventArgs e)
         {
-            hideAllGrid();
-            gridSettingsMonster.Visibility = Visibility.Visible;
+            hideAllSubpanel();
+            SettingsSubpanel.Visibility = Visibility.Visible;
+            MainContent.Content = new MonsterPanel();
+            Highlight.Margin = new Thickness(-90, 177, 0, 0);
         }
 
         private void btnTeam_Click(object sender, RoutedEventArgs e)
         {
-            hideAllGrid();
-            gridSettingsTeam.Visibility = Visibility.Visible;
+            hideAllSubpanel();
+            SettingsSubpanel.Visibility = Visibility.Visible;
+            MainContent.Content = new TeamPanel();
+            Highlight.Margin = new Thickness(-90, 202, 0, 0);
         }
 
     }

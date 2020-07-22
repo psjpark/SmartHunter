@@ -5,9 +5,8 @@
                     
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:pfComponentModel="clr-namespace:System.ComponentModel;assembly=PresentationFramework"
-                    xmlns:wbComponentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-                    
-                    xmlns:converters="clr-namespace:SmartHunter.Ui.Converters"
+                    xmlns:wbComponentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"                    
+                    xmlns:converters="clr-namespace:SmartHunter.Ui.Converters"                    
                     xmlns:coreData="clr-namespace:SmartHunter.Core.Data"
                     xmlns:data="clr-namespace:SmartHunter.Game.Data"
                     xmlns:widgetContexts="clr-namespace:SmartHunter.Game.Data.WidgetContexts"

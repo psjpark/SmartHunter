@@ -1,27 +1,33 @@
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Controls;
+using SmartHunter.Ui;
+using SmartHunter.Game;
 
 namespace SmartHunter.Core
 {
     public class Setting : INotifyPropertyChanged
     {
-        //public bool Value { get; set; }
-        //public bool Enabled { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
 
         private bool _value;
         private bool _enabled;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
+        
         public bool Value
         {
-            get => _value;
+            get
+            {
+                return _value;
+            }
             set
             {
                 if (_value == value)
@@ -32,15 +38,20 @@ namespace SmartHunter.Core
         }
         public bool Enabled
         {
-            get => _enabled;
+            get
+            {
+                return _enabled;
+            }
             set
             {
-                if (_enabled == value) return;
+                if (_enabled == value)
+                    return;
                 _enabled = value;
                 OnPropertyChanged(nameof(Enabled));
             }
         }
 
+       
         public string Name { get; }
         public string Label { get; }
         public string Description { get; }
@@ -48,15 +59,15 @@ namespace SmartHunter.Core
         public string Fontweight { get; }
         public List<Setting>SubSettings { get; }
         public Command TriggerAction { get; }
-        public Setting(bool value, bool enabled, string name, string label, string description, Command action = null)
+        public Setting(bool _value, bool _enabled, string name, string label, string description, Command action = null)
         {
-            Value = value;
-            Enabled = enabled;
+            Value = _value;
+            Enabled = _enabled;
             Name = name;
             Label = label;
             Description = description;                       
             SubSettings = new List<Setting>(); 
             TriggerAction = action;            
-        }
+        }                
     }
 }
