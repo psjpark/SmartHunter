@@ -18,6 +18,8 @@
         <Company>SmartHunter by psjpark</Company>
         <Product />
         <Version>2.0.1</Version>
+        <PackageIcon>MHW-Gajalaka_Icon.ico</PackageIcon>
+        <ApplicationIcon>MHW-Gajalaka_Icon.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugType>full</DebugType>
@@ -42,9 +44,19 @@
         <Exec Command="powershell.exe -ExecutionPolicy Unrestricted -File &quot;$(ProjectDir)..\build\PackageRelease.ps1&quot; $(Configuration)" />
     </Target>
     <ItemGroup>
+      <None Remove="Ui\Resources\MHW-Gajalaka_Icon.ico" />
+      <None Remove="Ui\Resources\mhw_logo_inverted.png" />
+      <None Remove="Ui\Resources\mhw_logo_inverted.png" />
       <None Remove="Ui\Windows\mhw_logo_inverted.png" />
+      <None Include="Ui\Resources\MHW-Gajalaka_Icon.ico">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
     <ItemGroup>
+      <Resource Include="Ui\Resources\MHW-Gajalaka_Icon.ico">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </Resource>
       <Resource Include="Ui\Resources\mhw_logo_inverted.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
