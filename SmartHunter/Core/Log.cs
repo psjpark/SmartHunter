@@ -12,8 +12,8 @@ namespace SmartHunter.Core
         public static event EventHandler<GenericEventArgs<string>> LineReceived;
 
         public static void WriteLine(string message)
-        {
-            var line = string.Format("[{0:yyyy-MM-dd HH:mm:ss}] {1}", DateTimeOffset.Now.ToUniversalTime(), message);
+        {            
+            var line = string.Format("[{0:yyyy-MM-dd HH:mm:ss}] {1}", DateTimeOffset.Now, message);
             Console.WriteLine(line);
 
             LineReceived?.Invoke(null, new GenericEventArgs<string>(line));
