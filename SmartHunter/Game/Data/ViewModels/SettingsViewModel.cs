@@ -54,6 +54,7 @@ namespace SmartHunter.Game.Data.ViewModels
             {
                 ConfigHelper.Main.Values.ShutdownWhenProcessExits = !ConfigHelper.Main.Values.ShutdownWhenProcessExits;
                 ConfigHelper.Main.Save();
+                ConfigHelper.Main.Reload();
             })));
 
             SettingsGeneral.Add(new Setting(ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates, true, "General_2", "Automatically check and download updates", "If enabled SmartHunter will automatically check and download new updates",  new Command(_ =>
@@ -74,6 +75,7 @@ namespace SmartHunter.Game.Data.ViewModels
             {
                 ConfigHelper.Main.Values.Overlay.HideWhenGameWindowIsInactive = !ConfigHelper.Main.Values.Overlay.HideWhenGameWindowIsInactive;
                 ConfigHelper.Main.Save();
+                ConfigHelper.Main.Reload();
             })));
 
             SettingsGeneral.Add(new Setting(ConfigHelper.Main.Values.Overlay.DebugWidget.IsVisible, true, "General_4", "Enable debugging", "Show/Hide Debug Widget", new Command(_ =>
@@ -106,72 +108,84 @@ namespace SmartHunter.Game.Data.ViewModels
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedMonsters = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedMonsters;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedParts, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_3", "    Show unchanged parts", "Automatically hide monsters parts if they are not damaged", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedParts = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedParts;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_4", "    Show broken parts", "Show damanged monster parts", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_5", "    Show unchanged status effects", "Automatically hide monsters status effects when there weren't any changes", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_6", "    Show status effects", "Show status effects", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_7", "    Show monster size", "Show monster size hover its name", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowCrown, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_8", "    Show monster crown", "Show monster crown image", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowCrown = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowCrown;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBars, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_9", "    Monster Widget show bars", "Show Bars inside Monster Widget", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBars = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBars;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowNumbers, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_10", "    Monster Widget show numbers", "Show Numbers inside Monster Widget", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowNumbers = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowNumbers;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowPercents, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_11", "    Monster Widget show percents", "Show Percents inside Monster Widget", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowPercents = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowPercents;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.UseAnimations, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_12", "    Use animations", "Enable/Disable Animations for status effects", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.UseAnimations = !ConfigHelper.Main.Values.Overlay.MonsterWidget.UseAnimations;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowOnlySelectedMonster, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_13", "    Show only selected monster", "Show only the monster that you selected for your hunt", new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowOnlySelectedMonster = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowOnlySelectedMonster;
                ConfigHelper.Main.Save();
+               ConfigHelper.Main.Reload();
            })));
 
             // SETTINGS_TEAM
@@ -190,24 +204,28 @@ namespace SmartHunter.Game.Data.ViewModels
             {
                 ConfigHelper.Main.Values.Overlay.TeamWidget.DontShowIfAlone = !ConfigHelper.Main.Values.Overlay.TeamWidget.DontShowIfAlone;
                 ConfigHelper.Main.Save();
+                ConfigHelper.Main.Reload();
             })));
 
             SettingsTeam.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.ShowBars, ConfigHelper.Main.Values.Overlay.TeamWidget.IsVisible, "Team_3", "    Team Widget show bars", "Show Bars inside Team Widget", new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.TeamWidget.ShowBars = !ConfigHelper.Main.Values.Overlay.TeamWidget.ShowBars;
                 ConfigHelper.Main.Save();
+                ConfigHelper.Main.Reload();
             })));
 
             SettingsTeam.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.ShowNumbers, ConfigHelper.Main.Values.Overlay.TeamWidget.IsVisible, "Team_4", "    Team Widget show numbers", "Show Numbers inside Team Widget", new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.TeamWidget.ShowNumbers = !ConfigHelper.Main.Values.Overlay.TeamWidget.ShowNumbers;
                 ConfigHelper.Main.Save();
+                ConfigHelper.Main.Reload();
             })));
 
             SettingsTeam.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.ShowPercents, ConfigHelper.Main.Values.Overlay.TeamWidget.IsVisible, "Team_5", "    Team Widget show percents", "Show Percents inside Team Widget", new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.TeamWidget.ShowPercents = !ConfigHelper.Main.Values.Overlay.TeamWidget.ShowPercents;
                 ConfigHelper.Main.Save();
+                ConfigHelper.Main.Reload();
             })));
 
 
