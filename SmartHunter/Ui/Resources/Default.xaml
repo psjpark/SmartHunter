@@ -5,9 +5,8 @@
                     
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:pfComponentModel="clr-namespace:System.ComponentModel;assembly=PresentationFramework"
-                    xmlns:wbComponentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-                    
-                    xmlns:converters="clr-namespace:SmartHunter.Ui.Converters"
+                    xmlns:wbComponentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"                    
+                    xmlns:converters="clr-namespace:SmartHunter.Ui.Converters"                    
                     xmlns:coreData="clr-namespace:SmartHunter.Core.Data"
                     xmlns:data="clr-namespace:SmartHunter.Game.Data"
                     xmlns:widgetContexts="clr-namespace:SmartHunter.Game.Data.WidgetContexts"
@@ -22,7 +21,7 @@
     <converters:AngleToPointConverter x:Key="A_Converter_AngleToPoint" />
     <converters:PlayerToPlayerIndexConverter x:Key="A_Converter_PlayerToPlayerIndex" />
     <converters:FractionToPercentageConverter x:Key="A_Converter_FractionToPercentage" />
-    <converters:BoolToVisibilityConverter x:Key="A_Converter_BoolToVisibility" />
+    <converters:BoolToVisibilityConverter x:Key="A_Converter_BoolToVisibility" />    
     <converters:LocalizerConverter x:Key="A_Converter_Localizer" />
     <converters:NumberComparisonConverter x:Key="A_Converter_NumberGreater" Comparison="Greater" />
     <converters:NumberComparisonConverter x:Key="A_Converter_NumberNotEqual" Comparison="NotEqual" />
@@ -31,6 +30,7 @@
     <converters:StringFormatConverter x:Key="A_Converter_StringFormat" />
     <converters:NumberToCenteredMarginConverter x:Key="A_Converter_NumberToCenteredMargin" />
     <converters:WeaponTypeToNameConverter x:Key="A_Converter_WeaponTypeToName" />
+    
 
     <Color x:Key="A_Color_Widget_Background">#00000000</Color>
     <system:Double x:Key="A_Double_Widget_Opacity">1</system:Double>

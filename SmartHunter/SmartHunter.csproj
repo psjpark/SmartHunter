@@ -3,43 +3,101 @@
         <ProjectGuid>{F5F99CEF-1C16-48E6-A88B-1A66D3B53998}</ProjectGuid>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net461</TargetFramework>
-        <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Deterministic>false</Deterministic>
         <LangVersion>latest</LangVersion>
         <AssemblyTitle>SmartHunter</AssemblyTitle>
         <Deterministic>false</Deterministic>
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <FileVersion>2.0.0.0</FileVersion>
+        <AssemblyVersion>2.0.1.0</AssemblyVersion>
+        <FileVersion>2.0.1.0</FileVersion>
         <OutputPath>bin\$(Configuration)</OutputPath>
         <UseWPF>true</UseWPF>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <Platforms>AnyCPU;x64;x86</Platforms>
+        <Authors>psjpark</Authors>
+        <Company>SmartHunter by psjpark</Company>
+        <Product />
+        <Version>2.0.1</Version>
+        <PackageIcon>MHW-Gajalaka_Icon.ico</PackageIcon>
+        <ApplicationIcon>MHW-Gajalaka_Icon.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugType>full</DebugType>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+      <DebugType>full</DebugType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      <DebugType>full</DebugType>
+    </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugType>pdbonly</DebugType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+      <DebugType>pdbonly</DebugType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      <DebugType>pdbonly</DebugType>
     </PropertyGroup>
     <Target Name="PostBuild" BeforeTargets="PostBuildEvent">
         <Exec Command="xcopy /E /Y &quot;$(ProjectDir)Ui\Resources&quot; &quot;$(TargetDir)&quot;" />
         <Exec Command="powershell.exe -ExecutionPolicy Unrestricted -File &quot;$(ProjectDir)..\build\PackageRelease.ps1&quot; $(Configuration)" />
     </Target>
     <ItemGroup>
+      <None Remove="Ui\Resources\MHW-Gajalaka_Icon.ico" />
+      <None Remove="Ui\Resources\mhw_logo_inverted.png" />
+      <None Remove="Ui\Resources\mhw_logo_inverted.png" />
+      <None Remove="Ui\Windows\mhw_logo_inverted.png" />
+      <None Include="Ui\Resources\MHW-Gajalaka_Icon.ico">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+    </ItemGroup>
+    <ItemGroup>
+      <Resource Include="Ui\Resources\MHW-Gajalaka_Icon.ico">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Ui\Resources\mhw_logo_inverted.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Costura.Fody" Version="4.1.0" />
+        <PackageReference Include="Fody" Version="6.2.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+        <PackageReference Include="WPFToggleSwitch" Version="1.0.0" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="Microsoft.CSharp" />
         <Reference Include="System.Data.DataSetExtensions" />
+        <Reference Include="System.Deployment" />
         <Reference Include="System.IO.Compression" />
         <Reference Include="System.Net.Http" />
+        <Reference Include="System.Windows.Forms" />
         <Reference Include="System.Xaml" />
         <Reference Include="WindowsBase" />
         <Reference Include="PresentationCore" />
         <Reference Include="PresentationFramework" />
+        <Reference Include="WindowsFormsIntegration" />
     </ItemGroup>
     <ItemGroup>
         <Resource Include="Ui\Fonts\Roboto-Bold.ttf" />
         <Resource Include="Ui\Fonts\Roboto-Medium.ttf" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="Properties\Settings.Designer.cs">
+        <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Settings.settings</DependentUpon>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="Properties\Settings.settings">
+        <Generator>SettingsSingleFileGenerator</Generator>
+        <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      </None>
     </ItemGroup>
 </Project>

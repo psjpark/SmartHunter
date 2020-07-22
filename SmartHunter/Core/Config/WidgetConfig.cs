@@ -1,8 +1,8 @@
 namespace SmartHunter.Core.Config
-{
+{    
     public class WidgetConfig
     {
-        public bool IsVisible = true;
+        public bool IsVisible = true;               
         public float X;
         public float Y;
         public float Scale = 1f;

@@ -6,9 +6,8 @@ $release = Join-Path $scriptPath "..\SmartHunter\bin\$Configuration\"
 $zip = Join-Path $release "SmartHunter.zip"
 
 $fileList =
-    "SmartHunter.exe",
-    "Newtonsoft.Json.dll",
-    "Default.xaml"
+    "SmartHunter.exe",    
+    "Default.xaml",
     "ko-KR.json"
 
 $Error.Clear()

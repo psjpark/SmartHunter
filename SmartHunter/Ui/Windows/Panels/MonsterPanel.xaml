@@ -1,0 +1,28 @@
+<Page x:Class="SmartHunter.Ui.Windows.Panels.MonsterPanel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
+      xmlns:core="clr-namespace:SmartHunter.Core"
+      xmlns:ts="clr-namespace:WPFToggleSwitch;assembly=WPFToggleSwitch"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="560" Title="MonsterPanel" ShowsNavigationUI="False"
+      >
+
+    <Grid>
+        <ItemsControl x:Name="gridSettingsMonster" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding SettingsMonster}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type core:Setting}">
+                    <Grid x:Name="gridMonster">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Label}" IsEnabled="{Binding Enabled}" ToolTip="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 10 5" FontWeight="{Binding Fontweight}" FontFamily="Consolas" Foreground="White"/>
+                        <ts:ToggleSwitch x:Name="toggleSwitchMonsterAll" IsEnabled="{Binding Enabled}" Grid.Row="0" Grid.Column="1" Command ="{Binding TriggerAction}" IsChecked="{Binding Value}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 20 2" Foreground="White" UncheckedText="" CheckedText="" UncheckedBorderBrush="#FF333333" CheckedBorderBrush="#FF2D2D30" UncheckedBackground="White"/>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Page>
