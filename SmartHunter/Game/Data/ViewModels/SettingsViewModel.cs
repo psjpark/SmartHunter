@@ -27,8 +27,7 @@ namespace SmartHunter.Game.Data.ViewModels
 
         public List<Setting> SettingsGeneral { get;  }
         public List<Setting> SettingsMonster { get; }
-        public List<Setting> SettingsTeam { get;  }
-        public bool SettingsMonsterEnabled { get; }
+        public List<Setting> SettingsTeam { get;  }        
         
         private void restartSmartHunter()
         {

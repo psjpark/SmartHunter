@@ -50,8 +50,7 @@ namespace SmartHunter.Core
        
         public string Name { get; }
         public string Label { get; }
-        public string Description { get; }
-        public string Checkbox_visibility { get; }
+        public string Description { get; }        
         public string Fontweight { get; }
         public List<Setting>SubSettings { get; }
         public Command TriggerAction { get; }
