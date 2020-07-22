@@ -6,8 +6,6 @@ using System.Windows;
 using SmartHunter.Core;
 using SmartHunter.Core.Data;
 using SmartHunter.Game.Helpers;
-using System.Collections.ObjectModel;
-using SmartHunter.Ui.Windows;
 
 namespace SmartHunter.Game.Data.ViewModels
 {
@@ -32,7 +30,6 @@ namespace SmartHunter.Game.Data.ViewModels
         public List<Setting> SettingsTeam { get;  }
         public bool SettingsMonsterEnabled { get; }
         
-
         private void restartSmartHunter()
         {
             string exec = Assembly.GetEntryAssembly()?.Location;
@@ -41,28 +38,6 @@ namespace SmartHunter.Game.Data.ViewModels
                 Process.Start("SmartHunter.exe");
             }
             Environment.Exit(0);
-        }
-
-        //bool m_HideWidgetsRequested = ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible;
-        //public bool HideWidgetsRequested
-        //{
-        //    get { return m_HideWidgetsRequested; }
-        //    set
-        //    {
-        //        if (SetProperty(ref m_HideWidgetsRequested, value))
-        //        {
-        //            NotifyPropertyChanged(nameof(HideWidgetsRequested));
-        //        }
-        //    }
-        //}
-
-
-        public bool IsEnabled
-        {
-            get
-            {
-                return false;
-            }
         }
 
         public SettingsViewModel()

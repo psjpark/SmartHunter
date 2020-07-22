@@ -5,7 +5,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
       xmlns:core="clr-namespace:SmartHunter.Core"
       xmlns:ts="clr-namespace:WPFToggleSwitch;assembly=WPFToggleSwitch"
-      xmlns:viewModels="clr-namespace:SmartHunter.Game.Data.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="420" d:DesignWidth="560" Title="MonsterPanel" ShowsNavigationUI="False"
       >

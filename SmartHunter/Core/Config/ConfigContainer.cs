@@ -6,9 +6,6 @@ using Newtonsoft.Json.Converters;
 using SmartHunter.Config;
 using SmartHunter.Game.Helpers;
 using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
-using SmartHunter.Ui.Windows;
-using System.Windows;
-using System.Windows.Data;
 
 namespace SmartHunter.Core.Config
 {

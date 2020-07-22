@@ -1,9 +1,5 @@
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Controls;
-using SmartHunter.Ui;
-using SmartHunter.Game;
 
 namespace SmartHunter.Core
 {

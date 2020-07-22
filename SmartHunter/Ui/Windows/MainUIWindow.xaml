@@ -8,15 +8,6 @@
         mc:Ignorable="d"
         Title="SmartHunter" Height="440" Width="660" WindowStartupLocation="CenterScreen" Background="Transparent" Foreground="White" FontFamily="Consolas" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown">
 
-    <Window.Resources>
-        <ResourceDictionary>
-            <Style TargetType="TextBox">
-                <Setter Property="FontFamily" Value="Consolas" />
-                <Setter Property="FontSize" Value="14" />
-            </Style>
-        </ResourceDictionary>
-    </Window.Resources>
-
     <Grid>
         <!--Window control-->
         <Grid VerticalAlignment="Top" Background="#FF252526">
@@ -48,68 +39,7 @@
             </DockPanel>
             <!--Main Grid-->
             <Grid x:Name="gridMain" Width="560" >
-                <Frame x:Name="MainContent" NavigationUIVisibility="Hidden"/>
-
-                <!--Settings_Monster Grid-->
-                <!--<ItemsControl x:Name="gridSettingsMonster" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding SettingsMonster}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate DataType="{x:Type core:Setting}">
-                            <Grid x:Name="gridMonster">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Label}" IsEnabled="{Binding Enabled}" ToolTip="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 10 5" FontWeight="{Binding Fontweight}" />
-                                <ts:ToggleSwitch x:Name="toggleSwitchMonsterAll" IsEnabled="{Binding Enabled}" Grid.Row="0" Grid.Column="1" Command ="{Binding TriggerAction}" IsChecked="{Binding Value}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 20 2" Foreground="White" UncheckedText="" CheckedText="" UncheckedBorderBrush="#FF333333" CheckedBorderBrush="#FF2D2D30"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-
-                -->
-                <!--Settings_Team Grid-->
-                <!--
-                <ItemsControl x:Name="gridSettingsTeam" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding SettingsTeam}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate DataType="{x:Type core:Setting}">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Label}" IsEnabled="{Binding Enabled}" ToolTip="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 10 5" FontWeight="{Binding Fontweight}" />
-                                <ts:ToggleSwitch x:Name="toggleSwitchTeamAll" IsEnabled="{Binding Enabled}" Grid.Row="0" Grid.Column="1" Command ="{Binding TriggerAction}" IsChecked="{Binding Value}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 20 2" Foreground="White" UncheckedText="" CheckedText="" UncheckedBorderBrush="#FF333333" CheckedBorderBrush="#FF2D2D30"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-                -->
-                <!--Log Grid-->
-                <!--
-                
-                <ItemsControl x:Name="gridSettingsGeneral" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding SettingsGeneral}">
-                    <TextBlock Text="asdfasdfasdf" Foreground="White" Margin="5,5,5,5"></TextBlock>
-                    <ts:ToggleSwitch/>
-                    -->
-                <!--<ItemsControl.ItemTemplate>
-                        <DataTemplate DataType="{x:Type core:Setting}">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Label}" ToolTip="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 10 5" FontWeight="{Binding Fontweight}" ></TextBlock>
-                                <ts:ToggleSwitch x:Name="toggleSwitchGeneralAll" Grid.Row="0" Grid.Column="1" Command ="{Binding TriggerAction}" IsChecked="{Binding Value}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 20 2" Foreground="White" UncheckedText="" CheckedText="" UncheckedBorderBrush="#FF333333" CheckedBorderBrush="#FF2D2D30"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>-->
-                <!--
-
-                </ItemsControl>-->
-
-                <!--Settings_Monster Grid-->
-
-                <!--Settings_Team Grid-->
+                <Frame x:Name="MainContent" NavigationUIVisibility="Hidden"/>                
             </Grid>
         </DockPanel>
     </Grid>

@@ -1,21 +1,10 @@
-using System;
 using System.Windows;
-using System.Windows.Data;
 using System.Windows.Input;
-using SmartHunter.Core.Data;
 using SmartHunter.Game.Data.ViewModels;
-using SmartHunter.Ui.Converters;
-using System.ComponentModel;
 using SmartHunter.Ui.Windows.Panels;
-using System.Windows.Controls;
 
 namespace SmartHunter.Ui.Windows
 {
-    /// <summary>
-    /// Interaction logic for Window1.xaml
-    /// </summary>
-    ///   
-
     public partial class MainUIWindow : Window
     {
         public MainUIWindow()
