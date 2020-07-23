@@ -19,7 +19,7 @@
         <Product />
         <Version>2.0.1</Version>
         <PackageIcon>MHW-Gajalaka_Icon.ico</PackageIcon>
-        <ApplicationIcon>MHW-Gajalaka_Icon.ico</ApplicationIcon>
+        <ApplicationIcon>Ui\Resources\MHW-Gajalaka_Icon.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugType>full</DebugType>
