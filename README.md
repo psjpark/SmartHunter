@@ -1,6 +1,7 @@
 # SmartHunter by psjpark
 
-Complete UI overhaul to give the application more modern look. Switch/toggle dependencies have been added to improve UX. 
+Complete UI overhaul of the existing SmartHunter (forked from Sir-wilhelm/SmartHunter) to give the application more modern look. 
+Switch/toggle dependencies have been added to improve UX. 
 
 
 
