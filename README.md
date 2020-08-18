@@ -1,3 +1,10 @@
+# SmartHunter by psjpark
+
+Complete UI overhaul to give the application more modern look. Switch/toggle dependencies have been added to improve UX. 
+
+
+
+
 # SmartHunter - Monster Hunter: World Overlay
 
 A complete overlay for Monster Hunter: World on PC with Iceborne support. Originally distributed on [Nexus Mods](https://www.nexusmods.com/monsterhunterworld/mods/793). Features include:
