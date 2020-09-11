@@ -24,7 +24,7 @@ A complete overlay for Monster Hunter: World on PC with Iceborne support. Origin
 
 ## How to install
 
-- Download the latest release from [here](https://github.com/sir-wilhelm/SmartHunter/releases) (Assets > SmartHunter.zip).
+- Download the latest release from [here](https://github.com/psjpark/SmartHunter/releases/download/2.0.1.0/SmartHunter.zip)
 - Extract the contents of the zip.
 - Right-click SmartHunter.exe > Properties > check Unblock > click OK.
 
