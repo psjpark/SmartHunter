@@ -8,6 +8,15 @@ namespace SmartHunter.Config
         [PreserveCollectionIntegrity]
         public Dictionary<string, string> Strings = new Dictionary<string, string>()
         {
+
+            // Main UI
+
+            { "MAIN_UI_LOG", "  Log" },
+            { "MAIN_UI_Settings", "  Settings" },
+            { "MAIN_UI_S_General", "    General" },
+            { "MAIN_UI_S_Monster", "    Monster" },
+            { "MAIN_UI_S_Team", "    Team" },
+
             { "LOC_UNKNOWN_PLAYER", "Player" },
             { "LOC_WIDGET_MONSTER", "Monster Widget" },
             { "LOC_WIDGET_TEAM", "Team Widget" },
