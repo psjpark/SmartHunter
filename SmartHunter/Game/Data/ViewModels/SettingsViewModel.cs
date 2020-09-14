@@ -109,13 +109,19 @@ namespace SmartHunter.Game.Data.ViewModels
                 SettingsMonster[i].Enabled = !SettingsMonster[i].Enabled;
            })));
 
-
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedMonsters, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible,  "Monster_2", GetLocString("LOC_SETTING_SHOW_UNCHANGED_MONSTERS"), GetLocString("LOC_SETTING_SHOW_UNCHANGED_MONSTERS_DESC"), new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedMonsters = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedMonsters;
                ConfigHelper.Main.Save();
                ConfigHelper.Main.Reload();
            })));
+
+            SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_4", GetLocString("LOC_SETTING_ALWAYS_SHOW_PARTS"), GetLocString("LOC_SETTING_ALWAYS_SHOW_PARTS_DESC"), new Command(_ =>
+            {
+                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts;
+                ConfigHelper.Main.Save();
+                ConfigHelper.Main.Reload();
+            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedParts, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_3", GetLocString("LOC_SETTING_SHOW_UNCHANGED_PARTS"), GetLocString("LOC_SETTING_SHOW_UNCHANGED_PARTS_DESC"), new Command(_ =>
            {
@@ -124,23 +130,16 @@ namespace SmartHunter.Game.Data.ViewModels
                ConfigHelper.Main.Reload();
            })));
 
-            SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_4", GetLocString("LOC_SETTING_ALWAYS_SHOW_PARTS"), GetLocString("LOC_SETTING_ALWAYS_SHOW_PARTS_DESC"), new Command(_ =>
-           {
-               ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBrokenParts;
-               ConfigHelper.Main.Save();
-               ConfigHelper.Main.Reload();
-           })));
+            SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_6", GetLocString("LOC_SETTING_SHOW_STATUS_EFFECTS"), GetLocString("LOC_SETTING_SHOW_STATUS_EFFECTS_DESC"), new Command(_ =>
+            {
+                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects;
+                ConfigHelper.Main.Save();
+                ConfigHelper.Main.Reload();
+            })));
 
             SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_5", GetLocString("LOC_SETTING_SHOW_UNCHANGED_STATUS_EFFECTS"), GetLocString("LOC_SETTING_SHOW_UNCHANGED_STATUS_EFFECTS_DESC"), new Command(_ =>
            {
                ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects;
-               ConfigHelper.Main.Save();
-               ConfigHelper.Main.Reload();
-           })));
-
-            SettingsMonster.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects, ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster_6", GetLocString("LOC_SETTING_SHOW_STATUS_EFFECTS"), GetLocString("LOC_SETTING_SHOW_STATUS_EFFECTS_DESC"), new Command(_ =>
-           {
-               ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowStatusEffects;
                ConfigHelper.Main.Save();
                ConfigHelper.Main.Reload();
            })));
