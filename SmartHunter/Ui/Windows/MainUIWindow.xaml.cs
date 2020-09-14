@@ -2,6 +2,7 @@ using System.Windows;
 using System.Windows.Input;
 using SmartHunter.Game.Data.ViewModels;
 using SmartHunter.Ui.Windows.Panels;
+using SmartHunter.Game.Helpers;
 
 namespace SmartHunter.Ui.Windows
 {
@@ -12,7 +13,22 @@ namespace SmartHunter.Ui.Windows
             InitializeComponent();         
             gridMain.DataContext = SettingsViewModel.Instance;
             hideAllSubpanel();
+            init_Localization();
             MainContent.Content = new LogPanel();
+        }
+
+        private string GetLocString (string stringId)
+        {
+            return LocalizationHelper.GetString(stringId);
+        }
+
+        private void init_Localization()
+        {
+            btnLog.Content = GetLocString("MAIN_UI_LOG");
+            btnSettings.Content = GetLocString("MAIN_UI_Settings");
+            btnGeneral.Content = GetLocString("MAIN_UI_S_General");
+            btnMonster.Content = GetLocString("MAIN_UI_S_Monster");
+            btnTeam.Content = GetLocString("MAIN_UI_S_Team");
         }
 
         private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
