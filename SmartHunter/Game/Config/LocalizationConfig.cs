@@ -59,9 +59,7 @@ namespace SmartHunter.Config
             { "LOC_MONSTER_FURIOUS_RAJANG", "Furious Rajang" },
             { "LOC_MONSTER_STYGIAN_ZINOGRE", "Stygian Zinogre" },
             { "LOC_MONSTER_SAFI_JIIVA", "Safi'jiiva" },
-
-            //{ "LOC_MONSTER_UKNOWN", "Unknown Monster" },
-            { "LOC_MONSTER_UKNOWN", "Kono Dio da!" },
+            { "LOC_MONSTER_UNKNOWN", "Unknown Monster" },            
             { "LOC_MONSTER_ANJANATH", "Anjanath" },
             { "LOC_MONSTER_AZURE_RATHALOS", "Azure Rathalos" },
             { "LOC_MONSTER_BARROTH", "Barroth" },
@@ -96,7 +94,7 @@ namespace SmartHunter.Config
             { "LOC_MONSTER_VAAL_HAZAK", "Vaal Hazak" },
             { "LOC_MONSTER_XENO_JIIVA", "Xeno'jiiva" },
             { "LOC_MONSTER_ZORAH_MAGDAROS", "Zorah Magdaros" },
-            { "LOC_PART_UKNOWN", "Unknown Part" },
+            { "LOC_PART_UNKNOWN", "Unknown Part" },
 
             { "LOC_PART_HEAD_SNOW", "Head Snow" },
             { "LOC_PART_BODY_SNOW", "Body Snow" },
@@ -170,7 +168,7 @@ namespace SmartHunter.Config
             { "LOC_PART_LEG_RIGHT_GOLD", "Golden Right Leg" },
             { "LOC_PART_TAIL_LEFT_GOLD", "Golden Left Tail" },
             { "LOC_PART_TAIL_RIGHT_GOLD", "Golden Right Tail" },
-            { "LOC_REMOVABLE_PART_UKNOWN", "Unknown Removable Part" },
+            { "LOC_REMOVABLE_PART_UNKNOWN", "Unknown Removable Part" },
             { "LOC_REMOVABLE_PART_TAIL", "Removable Tail" },
             { "LOC_REMOVABLE_PART_HORNS", "Removable Horns" },
             { "LOC_REMOVABLE_PART_HORNS_2", "Removable Horn Chip" },
