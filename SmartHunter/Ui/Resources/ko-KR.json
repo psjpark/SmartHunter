@@ -1,5 +1,10 @@
 {
   "Strings": {
+    "MAIN_UI_LOG": "  로그",
+    "MAIN_UI_Settings": "  설정",
+    "MAIN_UI_S_General": "    일반",
+    "MAIN_UI_S_Monster": "    몬스터",
+    "MAIN_UI_S_Team": "    팀",
     "LOC_UNKNOWN_PLAYER": "플레이어",
     "LOC_WIDGET_MONSTER": "몬스터 위젯",
     "LOC_WIDGET_TEAM": "팀 위젯",
