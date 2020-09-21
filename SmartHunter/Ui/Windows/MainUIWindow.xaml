@@ -311,9 +311,9 @@
                     </DockPanel>
                     <Button x:Name="btnLog" Content="  Log" HorizontalContentAlignment="Left" Width="90" Height="25" Margin="0,100,10,0" VerticalAlignment="Top" BorderThickness="0" BorderBrush="White" Background="#FF2D2D30" FontFamily="Consolas" Foreground="White" Click="btnLog_Click" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
                     <Button x:Name="btnSettings" Content="  Settings" HorizontalContentAlignment="Left" Width="90" Height="25" Margin="-10,125,0,0" VerticalAlignment="Top" d:LayoutOverrides="Height" BorderThickness="0" Background="#FF2D2D30" FontFamily="Consolas" Foreground="White" Click="btnSettings_Click" />
-                    <ComboBox Height ="20" Width="80" Margin="0,380,0,0" Background="#FF2D2D30" BorderBrush="#FF2D2D30" Foreground="White" IsReadOnly="True" BorderThickness="0" SelectedValue="en-US" Style="{DynamicResource ComboBoxStyle1}">
-                        <ComboBoxItem Tag ="en-US" IsSelected="True" Foreground ="White" Background="#FF2D2D30" Content="English"/>
-                        <ComboBoxItem Tag ="kr-KR" Foreground ="White" Background="#FF2D2D30" Content="한국어"/>
+                    <ComboBox x:Name ="cboxLoc" SelectedValuePath="Tag" SelectionChanged="cboxLoc_SelectionChanged" Height ="20" Width="80" Margin="0,380,0,0" Background="#FF2D2D30" BorderBrush="#FF2D2D30" Foreground="White" IsReadOnly="True" BorderThickness="0" Style="{DynamicResource ComboBoxStyle1}">
+                        <ComboBoxItem Tag ="en-US.json" Foreground ="White" Background="#FF2D2D30" Content="English"/>
+                        <ComboBoxItem Tag ="ko-KR.json" Foreground ="White" Background="#FF2D2D30" Content="한국어"/>
                     </ComboBox>
                     <StackPanel x:Name ="SettingsSubpanel" Width="100" Height="76" Margin="0,-40,0,0">
                         <Button x:Name="btnGeneral" Content="    General" HorizontalContentAlignment="Left" Width="90" Height="25" Margin="-10,0,0,0" VerticalAlignment="Top" BorderThickness="0" BorderBrush="White" Background="#FF2D2D30" FontFamily="Consolas" Foreground="White" Click="btnGeneral_Click"/>

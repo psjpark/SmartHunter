@@ -29,7 +29,7 @@ namespace SmartHunter.Game.Data.ViewModels
         public List<Setting> SettingsMonster { get; }
         public List<Setting> SettingsTeam { get;  }        
         
-        private void restartSmartHunter()
+        public void restartSmartHunter()
         {
             string exec = Assembly.GetEntryAssembly()?.Location;
             if (exec != null)
