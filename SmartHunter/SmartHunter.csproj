@@ -8,8 +8,8 @@
         <LangVersion>latest</LangVersion>
         <AssemblyTitle>SmartHunter</AssemblyTitle>
         <Deterministic>false</Deterministic>
-        <AssemblyVersion>2.0.1.0</AssemblyVersion>
-        <FileVersion>2.0.1.0</FileVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <FileVersion>2.1.0.0</FileVersion>
         <OutputPath>bin\$(Configuration)</OutputPath>
         <UseWPF>true</UseWPF>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -17,7 +17,7 @@
         <Authors>psjpark</Authors>
         <Company>SmartHunter by psjpark</Company>
         <Product />
-        <Version>2.0.1</Version>
+        <Version>2.1.0</Version>
         <PackageIcon>MHW-Gajalaka_Icon.ico</PackageIcon>
         <ApplicationIcon>Ui\Resources\MHW-Gajalaka_Icon.ico</ApplicationIcon>
     </PropertyGroup>
