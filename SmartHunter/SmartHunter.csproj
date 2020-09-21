@@ -8,8 +8,8 @@
         <LangVersion>latest</LangVersion>
         <AssemblyTitle>SmartHunter</AssemblyTitle>
         <Deterministic>false</Deterministic>
-        <AssemblyVersion>2.0.1.0</AssemblyVersion>
-        <FileVersion>2.0.1.0</FileVersion>
+        <AssemblyVersion>2.1.0</AssemblyVersion>
+        <FileVersion>2.1.0</FileVersion>
         <OutputPath>bin\$(Configuration)</OutputPath>
         <UseWPF>true</UseWPF>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -17,9 +17,9 @@
         <Authors>psjpark</Authors>
         <Company>SmartHunter by psjpark</Company>
         <Product />
-        <Version>2.0.1</Version>
+        <Version>2.1.0</Version>
         <PackageIcon>MHW-Gajalaka_Icon.ico</PackageIcon>
-        <ApplicationIcon>MHW-Gajalaka_Icon.ico</ApplicationIcon>
+        <ApplicationIcon>Ui\Resources\MHW-Gajalaka_Icon.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugType>full</DebugType>
@@ -44,10 +44,6 @@
         <Exec Command="powershell.exe -ExecutionPolicy Unrestricted -File &quot;$(ProjectDir)..\build\PackageRelease.ps1&quot; $(Configuration)" />
     </Target>
     <ItemGroup>
-      <None Remove="Ui\Resources\MHW-Gajalaka_Icon.ico" />
-      <None Remove="Ui\Resources\mhw_logo_inverted.png" />
-      <None Remove="Ui\Resources\mhw_logo_inverted.png" />
-      <None Remove="Ui\Windows\mhw_logo_inverted.png" />
       <None Include="Ui\Resources\MHW-Gajalaka_Icon.ico">
         <Pack>True</Pack>
         <PackagePath></PackagePath>
@@ -72,6 +68,7 @@
     </ItemGroup>
     <ItemGroup>
         <Reference Include="Microsoft.CSharp" />
+        <Reference Include="PresentationFramework.Aero2" />
         <Reference Include="System.Data.DataSetExtensions" />
         <Reference Include="System.Deployment" />
         <Reference Include="System.IO.Compression" />

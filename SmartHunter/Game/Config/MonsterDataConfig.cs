@@ -216,7 +216,7 @@ namespace SmartHunter.Game.Config
                         new MonsterPartConfig("Part", "LOC_PART_LEG_LEFT"),
                         new MonsterPartConfig("Part", "LOC_PART_LEG_RIGHT"),
                         new MonsterPartConfig("Part", "LOC_PART_TAIL"),
-                        new MonsterPartConfig("Removable", "LOC_PART_UKNOWN", true),
+                        new MonsterPartConfig("Removable", "LOC_PART_UNKNOWN", true),
                     },
                     829.11f,
                     new MonsterCrownConfig(CrownPreset.Rajang)
@@ -237,7 +237,7 @@ namespace SmartHunter.Game.Config
                         new MonsterPartConfig("Part", "LOC_PART_LEG_RIGHT"),
                         new MonsterPartConfig("Part", "LOC_PART_TAIL"),
                         new MonsterPartConfig("Removable", "LOC_REMOVABLE_PART_HORNS_2", true),
-                        new MonsterPartConfig("Removable", "LOC_PART_UKNOWN", true),
+                        new MonsterPartConfig("Removable", "LOC_PART_UNKNOWN", true),
                     },
                     829.11f,
                     new MonsterCrownConfig(CrownPreset.Rajang)
